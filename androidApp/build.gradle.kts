@@ -41,4 +41,5 @@ dependencies {
     implementation(libs.bundles.app.ui)
     coreLibraryDesugaring(libs.android.desugaring)
     implementation(libs.koin.android)
+    implementation(libs.coil.compose)
 }

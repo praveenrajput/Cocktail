@@ -25,13 +25,16 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting {
+        val commonMain by getting {
             dependencies {
                 implementation(libs.koin.core)
                 implementation(libs.coroutines.core)
                 implementation(libs.bundles.ktor.common)
                 implementation(libs.sqlDelight.coroutinesExt)
+            }
+        }
+        val commonTest by getting {
+            dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
@@ -62,7 +65,7 @@ kotlin {
                 implementation(
                     "${coroutineCore.module.group}:" +
                         "${coroutineCore.module.name}:" +
-                        coroutineCore.versionConstraint.displayName
+                        coroutineCore.versionConstraint.displayName,
                 ) {
                     version {
                         strictly(libs.versions.coroutines.native.get())
@@ -89,5 +92,12 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
+    }
+    namespace = "com.praveen.cocktail"
+}
+
+sqldelight {
+    database("CocktailDatabase") {
+        packageName = "com.praveen.cocktail"
     }
 }

@@ -1,0 +1,33 @@
+import com.praveen.cocktail.models.Ingredient;
+import kotlin.collections.List;
+
+CREATE TABLE Drink (
+id TEXT NOT NULL PRIMARY KEY,
+name TEXT NOT NULL,
+thumb TEXT NOT NULL,
+category TEXT NOT NULL,
+alcoholic INTEGER AS Boolean NOT NULL,
+instructions TEXT NOT NULL,
+ingredients TEXT AS List<Ingredient> NOT NULL,
+dateModified TEXT NOT NULL
+);
+
+selectAllDrinks:
+SELECT * FROM Drink;
+
+selectDrinkById:
+SELECT * FROM Drink WHERE  id = ?;
+
+selectDrinkByName:
+SELECT * FROM Drink WHERE  name = ?;
+
+insert:
+INSERT OR IGNORE INTO Drink(id, name, thumb, category, alcoholic, instructions, ingredients, dateModified)
+VALUES (?,?, ?, ?, ?, ?, ?, ?);
+
+insertDrink:
+INSERT OR IGNORE INTO Drink(id, name, thumb, category, alcoholic, instructions, ingredients, dateModified)
+VALUES ?;
+
+deleteAllDrinks:
+DELETE FROM Drink;

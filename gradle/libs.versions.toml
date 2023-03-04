@@ -4,7 +4,9 @@ targetSdk = "33"
 compileSdk = "33"
 
 compose = "1.3.3"
+composeCompiler = "1.4.3"
 foundation-compose = "1.3.1"
+material-compose = "1.3.1"
 activity-compose = "1.6.1"
 coroutines-native = "1.6.4"
 multiplatformSettings = "0.8.1"
@@ -12,7 +14,7 @@ koin = "3.3.3"
 kotlin = "1.8.10"
 ktor = "2.2.3"
 lifecycle = "2.5.1"
-sqlDelight = "1.5.3"
+sqlDelight = "2.0.0-alpha05"
 
 kotlinLogging = "2.1.21"
 coil = "2.2.2"
@@ -23,17 +25,17 @@ androidx-core = { module = "androidx.core:core-ktx", version = "1.6.0" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-test-junit = { module = "androidx.test.ext:junit", version = "1.1.3" }
-material-ui = {module = "com.google.android.material:material", version = "1.4.0"}
+material-ui = { module = "com.google.android.material:material", version = "1.4.0" }
 
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "foundation-compose" }
-compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
-compose-activity = { module = "androidx.activity:activity-compose", version = "activity-compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "material-compose" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
 
 gradlePlugin-android = { module = "com.android.tools.build:gradle", version = "7.4.1" }
 gradlePlugin-kotlinSerialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
-gradlePlugin-sqlDelight = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "sqlDelight" }
+gradlePlugin-sqlDelight = { module = "app.cash.sqldelight:gradle-plugin", version.ref = "sqlDelight" }
 
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
@@ -47,17 +49,17 @@ ktor-client-okHttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
-sqlDelight-android = { module = "com.squareup.sqldelight:android-driver", version.ref = "sqlDelight" }
-sqlDelight-coroutinesExt = { module = "com.squareup.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
-sqlDelight-native = { module = "com.squareup.sqldelight:native-driver", version.ref = "sqlDelight" }
-sqlDelight-runtime = { module = "com.squareup.sqldelight:runtime", version.ref = "sqlDelight" }
+sqlDelight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+sqlDelight-coroutinesExt = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+sqlDelight-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
+sqlDelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqlDelight" }
 
 kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlinLogging" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines-native" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-native" }
 
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
 [bundles]
 logging = [

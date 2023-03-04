@@ -1,11 +1,11 @@
 package com.praveen.cocktail.di
 
+import app.cash.sqldelight.ColumnAdapter
+import app.cash.sqldelight.db.SqlDriver
 import com.praveen.cocktail.CocktailDatabase
 import com.praveen.cocktail.data.network.api.CocktailApiImpl
 import com.praveen.cocktail.data.respository.CocktailRepository
 import com.praveen.cocktail.models.Ingredient
-import com.squareup.sqldelight.ColumnAdapter
-import com.squareup.sqldelight.db.SqlDriver
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation

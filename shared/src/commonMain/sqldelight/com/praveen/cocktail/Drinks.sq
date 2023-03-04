@@ -1,5 +1,6 @@
 import com.praveen.cocktail.models.Ingredient;
 import kotlin.collections.List;
+import kotlin.Boolean;
 
 CREATE TABLE Drink (
 id TEXT NOT NULL PRIMARY KEY,

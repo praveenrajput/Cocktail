@@ -1,12 +1,13 @@
 package com.praveen.cocktail.data.respository
 
+import app.cash.sqldelight.coroutines.asFlow
+import app.cash.sqldelight.coroutines.mapToList
 import com.praveen.cocktail.CocktailDatabase
 import com.praveen.cocktail.Drink
 import com.praveen.cocktail.DrinksQueries
 import com.praveen.cocktail.data.network.api.CocktailApiImpl
 import com.praveen.cocktail.models.Ingredient
-import com.squareup.sqldelight.runtime.coroutines.asFlow
-import com.squareup.sqldelight.runtime.coroutines.mapToList
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -19,7 +20,7 @@ class CocktailRepository : CocktailRepositoryInterface, KoinComponent {
 
     override suspend fun getDrinks(): Flow<List<Drink>> {
         refreshDrinks()
-        return drinksQueries.selectAllDrinks().asFlow().mapToList()
+        return drinksQueries.selectAllDrinks().asFlow().mapToList(Dispatchers.Default)
     }
 
     private suspend fun refreshDrinks() {

@@ -1,8 +1,8 @@
 package com.praveen.cocktail.di
 
+import app.cash.sqldelight.db.SqlDriver
+import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.praveen.cocktail.CocktailDatabase
-import com.squareup.sqldelight.android.AndroidSqliteDriver
-import com.squareup.sqldelight.db.SqlDriver
 import io.ktor.client.engine.okhttp.OkHttp
 import org.koin.dsl.module
 

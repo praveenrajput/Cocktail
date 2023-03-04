@@ -3,7 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("kotlinx-serialization")
-    id("com.squareup.sqldelight")
+    id("app.cash.sqldelight")
 }
 
 version = "1.0"
@@ -96,7 +96,9 @@ android {
 }
 
 sqldelight {
-    database("CocktailDatabase") {
-        packageName = "com.praveen.cocktail"
+    databases {
+        create("CocktailDatabase") {
+            packageName.set("com.praveen.cocktail")
+        }
     }
 }
